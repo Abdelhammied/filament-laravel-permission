@@ -27,6 +27,7 @@
     $role = $getState();
 @endphp
 
+
 <div class="container">
     @foreach ($permissions as $permission)
         @if ($permission->guard_name !== $role?->guard_name)
@@ -35,7 +36,7 @@
             @endphp
         @endif
 
-        <span class="{{ $role?->permissions->contains($permission->id) ? 'exists' : 'not-exists' }}"
+        <span class="{{ $role?->hasPermissionTo($permission) ? 'exists' : 'not-exists' }}"
             title="{{ $permission->name }}"></span>
     @endforeach
 </div>

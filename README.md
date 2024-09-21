@@ -50,9 +50,16 @@ return [
 
 ## Usage
 
+You need to register the plugin in the panel first
 ```php
-$filamentLaravelPermission = new Abdelhammied\FilamentLaravelPermission();
-echo $filamentLaravelPermission->echoPhrase('Hello, Abdelhammied!');
+$panel->plugin(
+    new \Abdelhammied\FilamentLaravelPermission\FilamentLaravelPermissionPlugin()
+)
+```
+then use the facade navigation function to add the plugin to your navigation
+
+```php 
+\Abdelhammied\FilamentLaravelPermission\Facades\FilamentLaravelPermissionFacade::navigationGroup()
 ```
 
 ## Testing

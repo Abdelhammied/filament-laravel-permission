@@ -2,17 +2,15 @@
 
 namespace Abdelhammied\FilamentLaravelPermission\Resources;
 
+use Abdelhammied\FilamentLaravelPermission\Resources\PermissionResource\Pages;
 use Filament\Forms;
-use Filament\Tables;
-use Filament\Forms\Get;
-use Filament\Infolists;
 use Filament\Forms\Form;
-use Filament\Tables\Table;
+use Filament\Infolists;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
+use Filament\Tables;
 use Filament\Tables\Actions\ViewAction;
-use Spatie\Permission\Models\Permission;
-use Abdelhammied\FilamentLaravelPermission\Resources\PermissionResource\Pages;
+use Filament\Tables\Table;
 
 class PermissionResource extends Resource
 {
@@ -33,12 +31,12 @@ class PermissionResource extends Resource
                     ->label('Guard Name')
                     ->options(config('filament-laravel-permission.guards.options'))
                     ->required()
-                    ->visible(!config('filament-laravel-permission.guards.use_single_default_guard')),
+                    ->visible(! config('filament-laravel-permission.guards.use_single_default_guard')),
 
                 Forms\Components\TextInput::make('group')
                     ->label('Group')
                     ->required(),
-            ])->columns(2)
+            ])->columns(2),
         ]);
     }
 
@@ -49,10 +47,10 @@ class PermissionResource extends Resource
                 Infolists\Components\TextEntry::make('name'),
 
                 Infolists\Components\TextEntry::make('guard_name')
-                    ->visible(!config('filament-laravel-permission.guards.use_single_default_guard')),
+                    ->visible(! config('filament-laravel-permission.guards.use_single_default_guard')),
 
                 Infolists\Components\TextEntry::make('group'),
-            ])->columns(3)
+            ])->columns(3),
         ]);
     }
 
@@ -64,12 +62,12 @@ class PermissionResource extends Resource
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make('guard_name')
-                    ->visible(!config('filament-laravel-permission.guards.use_single_default_guard')),
+                    ->visible(! config('filament-laravel-permission.guards.use_single_default_guard')),
 
                 Tables\Columns\TextColumn::make('group'),
             ])
             ->actions([
-                ViewAction::make()
+                ViewAction::make(),
             ])
             ->filters([
                 //

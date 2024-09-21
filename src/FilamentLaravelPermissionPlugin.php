@@ -18,7 +18,7 @@ class FilamentLaravelPermissionPlugin implements Plugin
     {
         $panel->resources([
             RoleResource::class,
-            PermissionResource::class
+            PermissionResource::class,
         ]);
     }
 

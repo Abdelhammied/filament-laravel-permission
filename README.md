@@ -1,9 +1,9 @@
 # :package_description
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/:vendor_slug/:package_slug/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/:vendor_slug/:package_slug/fix-php-code-styling.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/abdelhammied/filament-laravel-permission.svg?style=flat-square)](https://packagist.org/packages/abdelhammied/filament-laravel-permission)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/abdelhammied/filament-laravel-permission/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/abdelhammied/filament-laravel-permission/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/abdelhammied/filament-laravel-permission/fix-php-code-styling.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/abdelhammied/filament-laravel-permission/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/abdelhammied/filament-laravel-permission.svg?style=flat-square)](https://packagist.org/packages/abdelhammied/filament-laravel-permission)
 
 <!--delete-->
 ---
@@ -22,26 +22,13 @@ This is where your description should go. Limit it to a paragraph or two. Consid
 You can install the package via composer:
 
 ```bash
-composer require :vendor_slug/:package_slug
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag=":package_slug-migrations"
-php artisan migrate
+composer require abdelhammied/filament-laravel-permission
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag=":package_slug-config"
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag=":package_slug-views"
+php artisan vendor:publish --tag="filament-laravel-permission-config"
 ```
 
 This is the contents of the published config file:

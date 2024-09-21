@@ -2,9 +2,9 @@
 
 namespace Abdelhammied\FilamentLaravelPermission\Resources\RoleResource\Pages;
 
-use Spatie\Permission\Models\Role;
-use Filament\Resources\Pages\CreateRecord;
 use Abdelhammied\FilamentLaravelPermission\Resources\RoleResource;
+use Filament\Resources\Pages\CreateRecord;
+use Spatie\Permission\Models\Role;
 
 class CreateRole extends CreateRecord
 {

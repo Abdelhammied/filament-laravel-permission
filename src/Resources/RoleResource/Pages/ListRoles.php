@@ -2,9 +2,9 @@
 
 namespace Abdelhammied\FilamentLaravelPermission\Resources\RoleResource\Pages;
 
+use Abdelhammied\FilamentLaravelPermission\Resources\RoleResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
-use Abdelhammied\FilamentLaravelPermission\Resources\RoleResource;
 
 class ListRoles extends ListRecords
 {

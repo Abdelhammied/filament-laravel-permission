@@ -2,9 +2,9 @@
 
 namespace Abdelhammied\FilamentLaravelPermission\Resources\RoleResource\Pages;
 
+use Abdelhammied\FilamentLaravelPermission\Resources\RoleResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
-use Abdelhammied\FilamentLaravelPermission\Resources\RoleResource;
 
 class EditRole extends EditRecord
 {

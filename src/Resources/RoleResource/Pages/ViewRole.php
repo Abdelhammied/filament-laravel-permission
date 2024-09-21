@@ -2,9 +2,9 @@
 
 namespace Abdelhammied\FilamentLaravelPermission\Resources\RoleResource\Pages;
 
+use Abdelhammied\FilamentLaravelPermission\Resources\RoleResource;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
-use Abdelhammied\FilamentLaravelPermission\Resources\RoleResource;
 
 class ViewRole extends ViewRecord
 {

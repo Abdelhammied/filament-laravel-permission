@@ -2,8 +2,8 @@
 
 namespace Abdelhammied\FilamentLaravelPermission\Resources\RoleResource\Pages;
 
-use Filament\Resources\Pages\CreateRecord;
 use Abdelhammied\FilamentLaravelPermission\Resources\RoleResource;
+use Filament\Resources\Pages\CreateRecord;
 
 class CreateRole extends CreateRecord
 {
@@ -26,7 +26,7 @@ class CreateRole extends CreateRecord
         $record = $this->record;
         $permissions = $this->data['permissions'] ?? [];
 
-        $permissions = collect($permissions)->filter()->keys()->toArray();;
+        $permissions = collect($permissions)->filter()->keys()->toArray();
 
         $record->syncPermissions($permissions);
     }

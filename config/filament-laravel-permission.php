@@ -17,5 +17,5 @@ return [
             'api' => 'API',
             'nova' => 'Nova',
         ],
-    ]
+    ],
 ];

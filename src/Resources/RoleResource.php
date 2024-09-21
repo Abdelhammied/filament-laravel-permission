@@ -2,22 +2,22 @@
 
 namespace Abdelhammied\FilamentLaravelPermission\Resources;
 
+use Abdelhammied\FilamentLaravelPermission\Resources\RoleResource\Pages;
+use Abdelhammied\FilamentLaravelPermission\Tables\Columns\RolePermissionColumn;
 use Closure;
 use Filament\Forms;
-use Filament\Tables;
+use Filament\Forms\Form;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
 use Filament\Infolists;
-use Filament\Forms\Form;
-use Filament\Tables\Table;
-use Illuminate\Validation\Rule;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Table;
 use Illuminate\Support\Collection;
-use Spatie\Permission\Models\Role;
+use Illuminate\Validation\Rule;
 use Spatie\Permission\Models\Permission;
-use Abdelhammied\FilamentLaravelPermission\Resources\RoleResource\Pages;
-use Abdelhammied\FilamentLaravelPermission\Tables\Columns\RolePermissionColumn;
+use Spatie\Permission\Models\Role;
 
 class RoleResource extends Resource
 {
@@ -81,7 +81,7 @@ class RoleResource extends Resource
                         ->label('Guard Name'),
 
                     Infolists\Components\TextEntry::make('Users Count')
-                        ->getStateUsing(fn(Role $role) => $role?->users()->count()),
+                        ->getStateUsing(fn (Role $role) => $role?->users()->count()),
 
                     ...$permissionGroups->map(function ($permissionGroup, $group) use ($permissions) {
                         return Infolists\Components\Section::make($group)
@@ -179,7 +179,7 @@ class RoleResource extends Resource
         /** @var array $permissionIds */
         $permissionIds = self::permissionModelQuery()->get()->pluck('id')->toArray();
 
-        if (!config('filament-laravel-permission.styling.show_form_permissions_header_actions')) {
+        if (! config('filament-laravel-permission.styling.show_form_permissions_header_actions')) {
             return [];
         }
 

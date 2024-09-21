@@ -1,6 +1,7 @@
 <?php
 
 namespace Abdelhammied\FilamentLaravelPermission\Tests;
+
 use Abdelhammied\FilamentLaravelPermission\FilamentLaravelPermissionServiceProvider;
 use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;

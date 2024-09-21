@@ -1,5 +1,6 @@
 {
     "name": "abdelhammied/filament-laravel-permission",
+    "version": "0.0.1",
     "description": "A Laravel Filament package to manage user permissions and roles in filament with spatie/laravel-permission",
     "keywords": [
         "abdelhammied",
@@ -72,6 +73,6 @@
             }
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

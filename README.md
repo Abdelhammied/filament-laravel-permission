@@ -1,4 +1,4 @@
-# :package_description
+# Filament Laravel Permission
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/abdelhammied/filament-laravel-permission.svg?style=flat-square)](https://packagist.org/packages/abdelhammied/filament-laravel-permission)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/abdelhammied/filament-laravel-permission/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/abdelhammied/filament-laravel-permission/actions?query=workflow%3Arun-tests+branch%3Amain)

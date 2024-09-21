@@ -61,7 +61,7 @@ class RoleResource extends Resource
         /** @var Collection $permissionGroups */
         $permissionGroups = self::permissionGroup($record?->guard_name);
 
-        /** @var Permission $permissions */
+        /** @var Collection $permissions */
         $permissions = $record->permissions;
 
         return $infolist

@@ -2,8 +2,9 @@
 
 namespace Abdelhammied\FilamentLaravelPermission\Resources\RoleResource\Pages;
 
-use Abdelhammied\FilamentLaravelPermission\Resources\RoleResource;
+use Spatie\Permission\Models\Role;
 use Filament\Resources\Pages\CreateRecord;
+use Abdelhammied\FilamentLaravelPermission\Resources\RoleResource;
 
 class CreateRole extends CreateRecord
 {
@@ -23,7 +24,9 @@ class CreateRole extends CreateRecord
 
     public function afterCreate()
     {
+        /** @var Role $record */
         $record = $this->record;
+
         $permissions = $this->data['permissions'] ?? [];
 
         $permissions = collect($permissions)->filter()->keys()->toArray();

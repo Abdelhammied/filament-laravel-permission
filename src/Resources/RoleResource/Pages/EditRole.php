@@ -2,9 +2,10 @@
 
 namespace Abdelhammied\FilamentLaravelPermission\Resources\RoleResource\Pages;
 
-use Abdelhammied\FilamentLaravelPermission\Resources\RoleResource;
 use Filament\Actions;
+use Spatie\Permission\Models\Role;
 use Filament\Resources\Pages\EditRecord;
+use Abdelhammied\FilamentLaravelPermission\Resources\RoleResource;
 
 class EditRole extends EditRecord
 {
@@ -31,7 +32,9 @@ class EditRole extends EditRecord
 
     public function afterSave()
     {
+        /** @var Role $record */
         $record = $this->record;
+
         $permissions = $this->data['permissions'] ?? [];
 
         $permissions = collect($permissions)->filter()->keys();

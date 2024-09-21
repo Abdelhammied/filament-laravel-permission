@@ -7,7 +7,8 @@
 
 
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+A Laravel Filament package to manage user permissions and roles in filament with spatie/laravel-permission
+
 
 ## Installation
 
@@ -27,6 +28,23 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'styling' => [
+        'show_form_permissions_header_actions' => true,
+        'permissions_columns' => 3,
+        'permissions_collapsible' => false,
+        'permissions_collapsed' => false,
+    ],
+
+    'guards' => [
+        'use_single_default_guard' => false,
+        'default_guard' => 'nova',
+
+        'options' => [
+            'web' => 'Web',
+            'api' => 'API',
+            'nova' => 'Nova',
+        ],
+    ],
 ];
 ```
 

@@ -75,7 +75,7 @@ class RoleResource extends Resource
                         ->label('Guard Name'),
 
                     Infolists\Components\TextEntry::make('Users Count')
-                        ->getStateUsing(fn (Role $role) => $role->users()->count()),
+                        ->getStateUsing(fn (Role $role) => $role?->users()->count()),
 
                     ...$permissionGroups->map(function ($permissionGroup, $group) use ($permissions) {
                         return Infolists\Components\Section::make($group)
@@ -119,7 +119,7 @@ class RoleResource extends Resource
                 RolePermissionColumn::make('permissions')
                     ->getStateUsing(
                         function (Role $role) {
-                            $role->load('permissions');
+                            $role?->load('permissions');
 
                             return $role;
                         }

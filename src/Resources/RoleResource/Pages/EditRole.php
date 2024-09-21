@@ -39,6 +39,6 @@ class EditRole extends EditRecord
 
         $permissions = collect($permissions)->filter()->keys();
 
-        $record->syncPermissions($permissions);
+        $record?->syncPermissions($permissions);
     }
 }

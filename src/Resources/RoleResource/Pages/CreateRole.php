@@ -31,6 +31,6 @@ class CreateRole extends CreateRecord
 
         $permissions = collect($permissions)->filter()->keys()->toArray();
 
-        $record->syncPermissions($permissions);
+        $record?->syncPermissions($permissions);
     }
 }

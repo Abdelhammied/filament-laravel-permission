@@ -24,7 +24,8 @@
         "filament/filament": "^3.0",
         "filament/forms": "^3.0",
         "filament/tables": "^3.0",
-        "spatie/laravel-permission": "^6"
+        "spatie/laravel-permission": "^6",
+        "laravel/framework": "^10.10"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -68,10 +69,7 @@
         "laravel": {
             "providers": [
                 "Abdelhammied\\FilamentLaravelPermission\\FilamentLaravelPermissionServiceProvider"
-            ],
-            "aliases": {
-                "FilamentLaravelPermission": "Abdelhammied\\FilamentLaravelPermission\\Facades\\FilamentLaravelPermission"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",

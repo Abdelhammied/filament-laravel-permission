@@ -5,15 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/abdelhammied/filament-laravel-permission/fix-php-code-styling.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/abdelhammied/filament-laravel-permission/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/abdelhammied/filament-laravel-permission.svg?style=flat-square)](https://packagist.org/packages/abdelhammied/filament-laravel-permission)
 
-<!--delete-->
----
-This repo can be used to scaffold a Filament plugin. Follow these steps to get started:
 
-1. Press the "Use this template" button at the top of this repo to create a new repo with the contents of this skeleton.
-2. Run "php ./configure.php" to run a script that will replace all placeholders throughout all the files.
-3. Make something great!
----
-<!--/delete-->
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
@@ -41,8 +33,8 @@ return [
 ## Usage
 
 ```php
-$variable = new VendorName\Skeleton();
-echo $variable->echoPhrase('Hello, VendorName!');
+$filamentLaravelPermission = new Abdelhammied\FilamentLaravelPermission();
+echo $filamentLaravelPermission->echoPhrase('Hello, Abdelhammied!');
 ```
 
 ## Testing
@@ -65,7 +57,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [Abdelhammied Elsayed](https://github.com/Abdelhammied)
 - [All Contributors](../../contributors)
 
 ## License

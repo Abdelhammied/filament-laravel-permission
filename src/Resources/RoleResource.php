@@ -2,21 +2,22 @@
 
 namespace Abdelhammied\FilamentLaravelPermission\Resources;
 
-use Abdelhammied\FilamentLaravelPermission\Resources\RoleResource\Pages;
-use Abdelhammied\FilamentLaravelPermission\Tables\Columns\RolePermissionColumn;
 use Closure;
 use Filament\Forms;
-use Filament\Forms\Form;
+use Filament\Tables;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
 use Filament\Infolists;
+use Filament\Forms\Form;
+use Filament\Tables\Table;
+use Illuminate\Validation\Rule;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
-use Filament\Tables;
-use Filament\Tables\Table;
 use Illuminate\Support\Collection;
-use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+use Abdelhammied\FilamentLaravelPermission\Resources\RoleResource\Pages;
+use Abdelhammied\FilamentLaravelPermission\Tables\Columns\RolePermissionColumn;
 
 class RoleResource extends Resource
 {
@@ -35,6 +36,11 @@ class RoleResource extends Resource
                     Forms\Components\TextInput::make('name')
                         ->label('Role Name')
                         ->placeholder('Enter Role Name')
+                        ->unique(
+                            modifyRuleUsing: function (Get $get) {
+                                return Rule::unique('roles', 'name')->where('guard_name', $get('guard_name'));
+                            }
+                        )
                         ->required(),
 
                     Forms\Components\Select::make('guard_name')
@@ -75,7 +81,7 @@ class RoleResource extends Resource
                         ->label('Guard Name'),
 
                     Infolists\Components\TextEntry::make('Users Count')
-                        ->getStateUsing(fn (Role $role) => $role?->users()->count()),
+                        ->getStateUsing(fn(Role $role) => $role?->users()->count()),
 
                     ...$permissionGroups->map(function ($permissionGroup, $group) use ($permissions) {
                         return Infolists\Components\Section::make($group)
@@ -114,7 +120,7 @@ class RoleResource extends Resource
 
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('name')->searchable(),
 
                 RolePermissionColumn::make('permissions')
                     ->getStateUsing(
@@ -173,7 +179,7 @@ class RoleResource extends Resource
         /** @var array $permissionIds */
         $permissionIds = self::permissionModelQuery()->get()->pluck('id')->toArray();
 
-        if (! config('filament-laravel-permission.styling.show_form_permissions_header_actions')) {
+        if (!config('filament-laravel-permission.styling.show_form_permissions_header_actions')) {
             return [];
         }
 

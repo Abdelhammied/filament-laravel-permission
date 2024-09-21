@@ -2,6 +2,7 @@
 
 namespace Abdelhammied\FilamentLaravelPermission;
 
+use Abdelhammied\FilamentLaravelPermission\Resources\PermissionResource;
 use Abdelhammied\FilamentLaravelPermission\Resources\RoleResource;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
@@ -17,6 +18,7 @@ class FilamentLaravelPermissionPlugin implements Plugin
     {
         $panel->resources([
             RoleResource::class,
+            PermissionResource::class
         ]);
     }
 
